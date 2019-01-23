@@ -1,0 +1,1 @@
+webpackJsonp([427],{GdZR:function(o,c,n){o.exports=n.p+"static/img/hot-goods-info.cb83c4d.png"}});

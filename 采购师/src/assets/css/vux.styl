@@ -1,0 +1,156 @@
+@import './variable.styl'
+@import './mixins.styl'
+/* x-address */
+.weui-cells-wrapper
+  height 100%
+  position relative
+  .weui-cells
+    height 100%
+    f12()
+    &.vux-no-group-title
+      margin 0
+    &:before,
+    &:after
+      border none
+    .vux-cell-box,
+    .weui-cell
+      height 100%
+      span
+        color $color-6!important
+    .weui-cell__ft
+      &:after
+        content unset
+  .arrow
+    &:after
+      content ''
+      position: absolute
+      right: 14px
+      top 50%
+      transform translateY(-50%)
+      width: 12px;/*px*/
+      height: 20px;/*px*/
+      bg('arrow.png')
+.v-transfer-dom
+  .vux-popup-header
+    background $color-white
+    height 90px
+    .vux-popup-header-left,
+    .vux-popup-header-right
+      fz(15px)
+      tc()
+      line-height 90px
+    .vux-popup-header-right
+      color $color-orange9
+      padding-right 26px
+    .vux-popup-header-left
+      padding-left 26px
+      color $color-0
+  .scroller-content
+    z-index 999
+  .scroller-indicator
+    height 90px;/*px*/
+    top 50%
+    transform translateY(-50%)
+    bd-t($color-df)
+    bd-b($color-df)
+  .scroller-component
+    height 450px;/*px*/
+    background $color-white
+  .scroller-item
+    fz(15px)
+    height 90px;/*px*/
+    line-height 90px;/*px*/
+  .scroller-item-selected
+    color $color-0
+
+/* Datetime */
+.dp-container
+  .dp-header
+    bd-b($color-f4)
+    height 90px
+    .dp-item
+     font-size: 30px;/*px*/
+    .dp-item.dp-left
+      color $color-0
+      padding-left 40px
+    .dp-item.dp-right
+      color $color-orange
+      padding-right 40px
+  .dp-content
+    .scroller-component
+      height 450px;/*px*/
+      background $color-white
+    .scroller-content
+      z-index 999
+    .scroller-indicator
+      height 90px;/*px*/
+      top 50%
+      transform translateY(-50%)
+      bd-t($color-df)
+      bd-b($color-df)
+    .scroller-item
+      fz(15px)
+      height 90px;/*px*/
+      line-height 90px;/*px*/
+    .scroller-item-selected
+      color $color-0
+      
+/* tab */
+div.vux-tab-wrap
+  padding-top 92px
+  .vux-tab-container
+    height 92px
+    .vux-tab
+      height 92px
+      .vux-tab-item
+        height 92px
+        line-height 92px
+        fz(15px)
+        &.vux-tab-selected
+          color $color-orange
+          font-weight 700
+          bd-b($color-orange, 2px)
+      .vux-tab-ink-bar
+        background-color $color-orange
+        .vux-tab-bar-inner
+          background-color $color-orange
+div.goods-item-tabs
+  div.vux-tab-wrap
+    padding-top 68px
+    .vux-tab-container
+      height 68px
+      .vux-tab
+        height 68px
+        background none
+        .vux-tab-item
+          height 68px
+          line-height 68px
+          fz(14px)
+        .vux-tab-ink-bar
+          background-color $color-orange
+
+/* swipeout */
+// .vux-swipeout
+  // .vux-swipeout-item
+  //   overflow hidden
+  //   .vux-swipeout-button-box
+  //     overflow hidden
+  //     padding 1px 1px;/*no*/
+  //     >div
+  //       position relative
+  //     button.vux-swipeout-button
+  //       position absolute
+  //       right 0
+  //       top 0
+  //       fz(15px)
+  //       padding 2px 1px;/*no*/
+  //       background-origin content-box
+  //       background-clip content-box
+
+/* swiper */
+.vux-slider
+  >.vux-swiper
+    >.vux-swiper-item
+      >a
+        >div.vux-img
+          background-size 100% auto

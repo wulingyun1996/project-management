@@ -1,0 +1,1 @@
+webpackJsonp([234],{"0gCk":function(t,i,n){t.exports=n.p+"static/img/quotation-guide2.ca70eb6.png"}});

@@ -1,0 +1,1686 @@
+@import '~@/assets/css/variable'
+@import '~@/assets/css/mixins'
+@import '~@/assets/css/vux'
+.common-goods-detail-container
+  height 100%
+  position fixed
+  left 0
+  top 0
+  right 0
+  bottom 0
+  background $color-white
+  &.is-ipone
+    padding-top 40px!important
+  &.share-iponer-x
+    padding-top 0!important
+  .goods-scroll-wrapper
+    flex 1
+  /* 顶部导航 */
+  .goods-detail-nav
+    pf(100px)
+    padding 0 30px
+    flex-align-item()
+    background rgba(255, 255, 255, .1)
+    z-index 999
+    .nav-center
+      wh(60px)
+      >img
+        wh(100%)
+    .nav-left,
+    .nav-right
+      flex-align-item()
+      .nav-back
+        // bg('arrow-left.png')
+        // background-size 24px 44px
+        background url('./images/arrow-left.png') no-repeat left 48% center
+        background-size 28% auto
+        &.active
+          // bg('black-arrow.png')
+          // background-size 24px 44px
+          background url('./images/black-arrow.png') no-repeat left 48% center
+          background-size 28% auto
+          background-color rgba(0, 0, 0, .4)
+      .nav-quotation
+        margin-right 20px
+        bg('quotation-top.png')
+        // background-size 40px 40px
+        background-size 55% auto
+        &.active
+          bg('black-quotation.png')
+          // background-size 40px 40px
+          background-size 55% auto
+          background-color rgba(0, 0, 0, .4)
+      .nav-menu
+        bg('menu-top.png')
+        background-size 44px 10px
+        position relative
+        overflow unset!important
+        &.message
+          &:after
+            content ''
+            position absolute
+            top 4px
+            right 0px
+            wh(20px)
+            bg('icon-tips.png')
+        &.active
+          bg('black-menu.png')
+          background-size 44px 10px
+          background-color rgba(0, 0, 0, .4)
+      .nav-icon
+        wh(64px)
+        border-radius(50%)
+        background-color rgba(0, 0, 0, .4)
+    .nav-menu-wrapper
+      right 30px
+      top 100px
+      position absolute
+  .common-goods-container,
+  .flash-goods-container
+    height 100%
+    flex-col()
+  .goods-detail-banner
+    wh(750px)
+    position relative
+    .banner-progress
+      width 72px
+      height 40px
+      position absolute
+      bottom 24px
+      right 24px
+      z-index 999
+      border-radius(40px)
+      color $color-white
+      f10()
+      background rgba(0, 0, 0, .35)
+      flex-align-item()
+      justify-content center
+  .hot-goods-wrapper
+    position relative
+    overflow hidden
+    height 100px
+    z-index 999
+    .hot-goods-left,
+    .hot-goods-right
+      position absolute
+    .hot-goods-left
+      width 34%
+      height 140px
+      left 0
+      bottom 0
+      bg('hot-goods-banner.png')
+      z-index 999
+      .hot-goods-icon
+        width 248px
+        height 84px
+        margin 44px auto 0
+        margin-left 0
+        bg('hot-goods-info.png')
+    .hot-goods-right
+      width 70%
+      height 100px
+      right 0
+      bottom 0
+      f18()
+      tc()
+      line-height 100px
+      color #fff9da
+      background-image linear-gradient(90deg, $color-red, #fe6500)
+  .goods-flash-sale
+    height 96px
+    flex-align-item()
+    .flash-sale-price,
+    .flash-sale-time
+      height 100%
+    .flash-sale-price
+      width 68%
+      padding 0 24px
+      flex-align-item()
+      background-image linear-gradient(90deg, #fd5700 5%, #ff8a00 100%)
+      .flash-sale-icon
+        width 44px
+        height 46px
+        bg('clock-top.png')
+      .flash-sale-seperate
+        height 48px
+        bd-r(#fb8a21)
+      .flash-sale-main-price
+        f18()
+        color $color-white
+        line-height 50px
+        span
+          fz(30px)
+      .flash-sale-description
+        flex-col()
+        f12()
+        span
+          min-width 120px
+          height 36px
+          tc()
+          line-height 36px
+          bd(#fff1df)
+          color #fff1df
+          margin-bottom 8px
+          border-radius(4px)
+        del
+          color #9b5400
+          line-height 36px
+    .flash-sale-time
+      width 32%
+      flex-col()
+      justify-content center
+      align-items center
+      background $color-f3
+      h1
+        f12()
+        color $color-3
+        margin-bottom 6px
+      div
+        flex-align-item()
+        justify-content center
+        color $color-0
+        span
+          f14()
+          wh(40px)
+          line-height 44px
+          tc()
+          color $color-white
+          border-radius(8px)
+          background $color-3
+        i
+          font-weight 700
+          font-style normal
+          margin 0 4px;/*no*/
+  .goods-detail-authen
+    width 100%
+    height 72px
+    position relative
+    &.active
+      pf(72px)
+      top 128px
+      z-index 99
+    .authen-nav
+      width 100%
+      height 72px
+      padding 0 30px
+      background-image linear-gradient(90deg, #FFF4BE, #FFE260)
+      flex-align-item()
+      &.active
+        pf(72px)
+        top 128px
+      .authen-title
+        flex-align-item()
+        .shop-icon
+          width 28px
+          height 36px
+          margin-right 12px
+          bg('recommen-shop.png')
+        .authen-description
+          f13()
+          color $color-3
+          span
+            font-weight 700
+            color $color-red
+      .authen-url
+        flex-align-item()
+        .unauthen-icon
+          f12()
+          width 108px
+          height 40px
+          line-height 40px
+          tc()
+          margin-right 12px
+          tc()
+          border-radius(100px)
+          color $color-white
+          background #FF1A63
+        .unauthen-arrow
+          width 14px
+          height 20px
+          bg('arrow-red.png')
+  /* 价格模块 */
+  .unauthen-goods-price-container
+    .unauthen-tips
+      flex-f-align()
+      padding 20px 30px 0
+      f13()
+      color #FF4C4C
+      i
+        wh(20px)
+        bg('icon-red.png')
+        margin-right 8px
+    .goods-price-container
+      .price-type
+        f12()
+        color $color-9
+      .price-detail
+        color #FE8A8A
+        span
+          f13()
+          margin-left -24px
+        b
+          fz(22px)
+          display inline-block
+          vertical-align top
+      .commission
+        width max-content
+        margin -15px auto
+        border-radius(4px)
+        bd(#FFB359)
+        padding 4px
+        f12()
+        color #FFB359
+  .goods-price-share-container
+    padding 20px 30px
+    .price-top,
+    .price-bottom
+      flex-align-item()
+      i
+        font-style normal
+    .price-top
+      margin-bottom 16px
+      .price-detail
+        color $color-red
+        i
+          f12()
+          color $color-3
+        b
+          f13()
+        .price-int
+          fz(19px)
+        .price-limit
+          f11()
+          color $color-9
+    .price-bottom
+      f11()
+      color $color-9
+      b
+        text-decoration line-through
+    .goods-attribute-container
+      padding 0
+  .goods-price-container
+    height 180px
+    flex-f-align()
+    bd-b(#F4F4F4)
+    padding-top 20px
+    > div
+      flex 1
+      height 100%
+      tc()
+    .price-type
+      f12()
+      color $color-3
+      padding-left 30px
+    .price-detail
+      color $color-red
+      margin 15px 0
+      .money
+        font-weight 700
+        f13()
+      .price-int
+        font-weight 700
+        fz(19px)
+      .price-zero
+        font-weight 700
+        f13()
+      .price-limit
+        color $color-9
+        f11()
+    .commission
+      width max-content
+      margin 0 auto
+      border-radius(4px)
+      bd($color-orange)
+      padding 4px
+      f12()
+      color $color-orange
+    .goods-promotion-price
+      position relative
+      &:after
+        content ''
+        position absolute
+        top 50%
+        transform translateY(-50%)
+        right 0
+        width 1px;/*no*/
+        height 66px
+        background #F4F4F4
+  /* 材料馆/精品馆/材料馆 */
+  .goods-attribute-container
+    flex-f-align()
+    padding 16px 30px
+    span
+      f10()
+      border-radius(4px)
+      padding 6px
+      padding-top 7px
+      & + span
+        margin-left 10px
+      &.new-goods
+        color #F47575
+        background rgba(244, 117, 117, .1)
+      &.best-goods
+        color $color-orange
+        background rgba(255, 138, 0, .1)
+      &.meterial-goods
+        color #6DACF6
+        background rgba(109, 172, 246, .1)
+      &.goods-buy-limit
+        f11()
+        color $color-9
+  .goods-detail-main-price
+    padding 20px 30px 0
+    position relative
+    flex-col()
+    .goods-detail-title
+      flex-align-item()
+      .goods-title
+        color $color-3
+        font-weight 700
+        line-height 50px
+        max-width 84%
+        text-over(2)
+        .goods-storage-text
+          display inline
+          fz(15px)
+        span,
+        i
+          display inline-block
+          font-style normal
+          fz(13px)
+        .goods-storage
+          f10()
+          display inline-block
+          bd($color-orange)
+          color $color-orange
+          padding-left 2px;/*no*/
+          padding-right 3px;/*no*/
+          height 16px;/*no*/
+          line-height 16px;/*no*/
+        .goods-flash-label
+          height 36px
+          color $color-white
+          border-radius(36px)
+          line-height 36px
+          vertical-align text-bottom
+          i
+            float left
+          i:nth-child(1)
+            padding 1px 8px 0 12px
+            background $color-orange
+          i:nth-child(2)
+            padding 1px 12px 0 8px
+            background #fd57a0
+      .goods-separate
+        width 1px;/*no*/
+        height 100%
+        margin 0 36px
+        background $color-f4
+      .goods-share
+        width 38px
+        height 42px
+        bg('fs-share.png')
+    .goods-detail-price
+      padding 16px 0
+      bd-b($color-f4)
+      flex-align-item()
+      .goods-description-price,
+      .goods-commission
+        flex-col()
+      .goods-price
+        flex-align-item()
+        .goods-price-icon-0
+          color $color-white
+          padding 4px 16px
+          border-radius(100px)
+          margin-right 6px
+          background-image linear-gradient(90deg, $color-red, #fe6500)
+        .goods-price-detail
+          flex-s-btw()
+          align-items flex-end
+          margin-right 24px
+          span:nth-child(2)
+            color $color-red
+            f10()
+            .price-init
+              fz(20px)
+              font-style normal
+          span:nth-child(3)
+            color $color-9
+            margin-bottom 4px
+      .wholesale-num
+        flex-f()
+        f12()
+        color $color-3
+        margin-top 16px
+        .retail-price
+          color $color-c3
+          margin-left 20px
+      .commission-top
+        flex-align-item()
+        align-items flex-end
+        f10()
+        color $color-orange
+        .commission-icon
+          width 40px
+          height 34px
+          bg('commission-top.png')
+        .commission-init
+          margin-left 16px
+          f14()
+        span:nth-child(3)
+          margin-left -4px
+          margin-bottom 2px
+      .commission-bottom
+        margin-top 16px
+        f12()
+        flex-f()
+        align-items center
+        color $color-6
+        position relative
+        .commission-descption
+          wh(28px)
+          border-radius(50%)
+          background-image linear-gradient(#ffbf00, $color-orange)
+          margin-left 12px
+          color $color-white
+          text-align center
+          line-height 28px
+        /* 佣金介绍 */
+        .commission-introduce1
+          width 460px
+          height 140px
+          position absolute
+          left -460px
+          z-index 10
+          bg('commission-introduce.png')
+    .goods-wholesale-price-container
+      padding 16px 0
+      bd-b($color-f4)
+      flex-col()
+      .goods-wholesale-title
+        flex-align-item()
+        margin-bottom 16px
+        h2
+          f14()
+          color $color-white
+          padding 4px 16px
+          border-radius(100px)
+          background-image linear-gradient(90deg, $color-red, #fe6500)
+        >div
+          flex-align-item()
+          align-items flex-end
+          color $color-orange
+          position relative
+          .commission-introduce2
+            width 460px
+            height 140px
+            position absolute
+            right 35px
+            top -150%
+            z-index 10
+            bg('commission-introduce.png')
+            &.right-commission-icon
+              right -160px
+              bg('right-commission-icon.png')
+        .commission-icon
+          width 40px
+          height 34px
+          bg('commission-top.png')
+          margin-right 14px
+        .commission-text
+          f12()
+          margin-right 12px
+        .commission-init-num
+          f14()
+          font-style normal
+        .commission-zero
+          f10()
+        .commission-descption
+          wh(28px)
+          border-radius(50%)
+          background-image linear-gradient(#ffbf00, $color-orange)
+          margin-left 12px
+          color $color-white
+          text-align center
+          line-height 28px
+          &.no-right-margin
+            margin-left 0
+            margin-right 12px
+      .goods-wholesale-price
+        flex-align-item()
+        justify-content flex-start
+        li:nth-child(1),
+        li:nth-child(2)
+          margin-right 160px
+        h1
+          color $color-red
+          font-weight 700
+          padding 16px 0
+          .wholesale-price-init
+            fz(20px)
+            line-height 36px
+        h2,
+        h3
+          f12()
+          text-align center
+          color $color-3
+          line-height 32px
+          padding 8px 0
+        h3
+          color $color-9
+  .goods-detail-logistics
+    padding 0 30px
+    f12()
+    color $color-9
+    line-height 36px
+    flex-align-item()
+    height 70px
+  /* 价格和佣金说明模块 */
+  .price-explain-container
+    .price-explain
+      height 60px
+      padding 0 30px
+      flex-align-item()
+      background-image linear-gradient(90deg, #FEECD8, #FFDBBA)
+      color #AE7F46
+      f12()
+      .explain-left
+        flex-f()
+        .left-icon
+          width 28px
+          height 30px
+          bg('small-bell.png')
+          margin-right 16px
+        .left-text
+          line-height 34px
+      .explain-right
+        width 14px
+        height 20px
+        bg('explain-arrow.png')
+  .goods-title
+    f15()
+    color $color-3
+    line-height 1.4
+    text-over(2)
+    padding 0 30px
+    font-weight 700
+  .goods-statistics-wrapper
+    flex-f-align()
+    tc()
+    height 80px
+    line-height 80px
+    f12()
+    color $color-9
+    > div
+      flex 1
+      width 50%
+      height 100%
+      position relative
+    .sale-number
+      &:after
+        content ''
+        position absolute
+        right 0
+        top 50%
+        transform translateY(-50%) scale(.5)
+        width 1px;/*no*/
+        height 56px
+        background $color-c
+  /* 自购省/带购赚导航 */
+  .make-money-guide
+    margin-top 12px
+    .make-money-explain-guide
+      height 60px
+      padding 0 30px
+      flex-align-item()
+      background #FFFBF0
+      color #C98C8C
+      f13()
+      .explain-left
+        flex-f()
+        .left-icon
+          width 40px
+          height 46px
+          bg('icon-rule.png')
+          margin-right 16px
+        .left-text
+          flex-f-align()
+        .icon-quesition
+          wh(28px)
+          bg('icon-question.png')
+          margin-left 4px
+      .explain-right
+        f12()
+        flex-f-align()
+        i
+          width 14px
+          height 20px
+          margin-left 10px
+          bg('icon-arrow-right.png')
+  .goods-detail-specification
+    padding 20px 30px
+    f12()
+    color $color-9
+    flex-align-item()
+    .specification-desc
+      flex-col-btw()
+      align-items center
+      padding-right 20px
+      word-break keep-all
+      margin-right 20px
+      bd-r($color-f4)
+      .specification-icon
+        wh(36px)
+        bg('fs-specification.png')
+        margin-bottom 10px
+    .specification-text
+      line-height 34px
+      flex 1
+      text-over(2)
+    .specification-arrow
+      width 22px
+      height 12px
+      margin-left 10px
+      bg('icon-arrow-down.png')
+  /* 材料图书馆 */
+  .meterial-goods-container
+    padding 0 30px
+    .meterial-goods-guide
+      flex-align-item()
+      bd-b(#f4f4f4)
+      height 80px
+      h2
+        color $color-3
+        font-weight 700
+        f14()
+      .view-more
+        flex-f-align()
+        color $color-c
+        f12()
+        i
+          width 14px
+          height 20px
+          margin-left 10px
+          bg('icon-arrow-right.png')
+    .meterial-item
+      color $color-9
+      f13()
+      .item-info
+        flex-s-btw()
+        padding-top 12px
+        padding-bottom 16px
+      .info
+        flex 1
+        p
+          flex-f-align()
+          & + p
+            margin-top 12px
+        i
+          margin-right 10px
+          wh(36px)
+        .icon-house
+          bg('icon-house.png')
+        .icon-address
+          bg('icon-address.png')
+      .meterial-button
+        height 44px
+        line-height 44px
+        width 120px
+        f12()
+        bd(#A8CEFA)
+        border-radius(100px)
+        color #6DACF6
+        tc()
+      .separate
+        margin 0 -30px
+  .special-authen
+    height 72px
+    padding 0 30px
+    f14()
+    flex-align-item()
+    .special-authen-text
+      flex-f()
+      align-items flex-end
+      .special-authen-icon
+        width 32px
+        height 28px
+        bg('special-authen.png')
+      .special-authen-desc
+        color $color-orange
+        margin-left 10px
+      p
+        color $color-6
+        f12()
+        margin-left 8px
+      i
+        font-style normal
+        color #FF1A63
+        f14()
+    .special-authen-arrow
+      width 20px
+      height 16px
+      bg('fs-brackets.png')
+  .goods-details-message
+    f14()
+    color $color-3
+    .goods-details-introduce
+      padding 14px 30px
+      li
+        flex-f()
+        align-items center
+        padding 14px 0
+        h1
+          width 200px
+          color $color-9
+          padding-left 28px
+          line-height 40px
+          word-break keep-all
+    .goods-details-seperate
+    .goods-details-seperate
+      height 60px
+      flex-f()
+      justify-content center
+      background $color-f4
+      .seperate-wrapper
+        height inherit
+        width 55%
+        flex-f()
+        align-items center
+        .seperate-left,
+        .seperate-right
+          flex 1
+          bd-b($color-c)
+        .seperate-text
+          flex-f()
+          align-items center
+          line-height 40px
+          color $color-9
+          padding 0 16px
+        .comment-icon
+          width 28px
+          height 32px
+          margin-right 16px
+          bg('comments.png')
+          &.detail-cion
+            bg('goods-detail.png')
+    .goods-details-comment-title
+      height 80px
+      padding 0 30px
+      line-height 40px
+      flex-s-btw()
+      align-items center
+      bd-b($color-f4)
+      .commnent-nums
+        color $color-orange
+      .comment-more
+        flex-f()
+        color $color-c
+        align-items center
+        span:nth-child(2)
+          width 13px
+          height 24px
+          bg('arrow-right.png')
+          margin-left 8px
+    .goods-comment-list
+      padding 0 30px
+  .goods-details-header-wrapper
+    height 80px
+    &.active-1
+      pf(80px)
+      top 200px
+      z-index 99
+    &.active-2
+      pf(80px)
+      top 128px
+      z-index 99
+    .good-details-header
+      height 80px
+      padding 0 30px
+      line-height 40px
+      flex-s-btw()
+      align-items center
+      bd-b($color-f4)
+      >div
+        min-width 120px
+        tc()
+        position relative
+        padding-bottom 4px;/*no*/
+        &.active
+          color $color-orange
+          &:after
+            content ''
+            position absolute
+            left 50%
+            bottom 0
+            width 50%
+            bd-b($color-orange, 2px)
+            transform translateX(-50%)
+  .shop-nav
+    padding 20px 30px
+    f12()
+    color $color-3
+    .shop-description
+      flex-align-item()
+      margin-bottom 10px
+      img
+        wh(80px)
+        border-radius(50%)
+        margin-right 12px
+      .shop-intruction
+        flex-align-item()
+        f14()
+        flex 1
+        span
+          flex 1
+      .shop-entry
+        button
+          min-width 128px
+          height 52px
+          line-height 52px
+          padding 0
+          tc()
+          color $color-orange
+          bd($color-orange)
+          border-radius(8px)
+          f12()
+    .shop-message
+      line-height 36px
+      flex-align-item()
+      justify-content center
+      .shop-goods-nums,
+      .shop-purchaser-nums
+        flex-f()
+        span:nth-child(1)
+          margin-right 16px
+      .shop-seperate
+        width 1px;/*no*/
+        height 20px
+        background $color-97
+        margin 0 90px
+  .goods-details-content
+    img
+      display block
+  /* 底部 */
+  .goods-detail-footer
+    height 100px
+    flex-f()
+    > div
+      height 100%
+    .goods-cart
+      flex-center()
+      width 140px
+      .icon-add-cart
+        position relative
+        wh(50px)
+        bg('icon-add-cart.png')
+        span
+          position absolute
+          right 0
+          top 0
+          wh(32px)
+          border-radius(50%)
+          background #EA2F2F
+          color $color-white
+          f10()
+          tc()
+          line-height 32px
+          padding-top 1px;/*no*/
+          top -10px
+          right -20px
+    .authened
+      flex-f()
+      flex 1
+      > div
+        height 100%
+        flex 1
+        flex-f-align()
+        f18()
+        color $color-white
+        .price
+          f10()
+          margin-top 8px
+        i
+          wh(56px)
+          margin-right 25px
+          margin-left 34px
+      .goods-buy-to-self
+        background #FFB300
+        .icon-save-money
+          bg('icon-save-money.png')
+      .goods-buy-to-others
+        background-image linear-gradient(to right, #FF4910 0%, #FF8A00 100%)
+        .icon-make-money
+          bg('icon-make-money.png')
+      .price-type
+        padding-left 8px
+    .unauthen
+      flex 1
+      color $color-white
+      f16()
+      flex-center()
+      background #FFB300
+  .footer-container
+    foot-btn()
+    f12()
+    flex-f()
+    min-height 100px
+    line-height 0
+    background $color-white
+    position relative
+    .footer-left
+      width 40%
+      padding 10px 30px
+      flex-align-item()
+      justify-content center
+      color $color-6
+      .footer-seperate
+        bd-r($color-f4)
+        height 40px
+        margin 0 40px
+      >div
+        flex-col()
+        align-items center
+        height 100%
+        .footer-left-text
+          line-height 34px
+      .footer-consult
+        .footer-consult-icon
+          width 32px
+          height 34px
+          margin-bottom 10px
+          bg('goods-query.png')
+      .footer-collect
+        .footer-collect-icon
+          width 32px
+          height 32px
+          margin-bottom 10px
+          bg('collect-no.png')
+          &.active
+            bg('collected.png')
+      .footer-shop
+        .footer-shop-icon
+          // width 32px
+          // height 30px
+          // margin-bottom 14px
+          // bg('fs-shop.png')
+          width 36px
+          height 34px
+          margin-bottom 10px
+          bg('add-cart.png')
+    .footer-right
+      width 60%
+      height inherit
+      flex-f()
+      .footer-right-message
+        padding 0 10px
+        // width 60%
+        flex-align-item()
+        color $color-white
+        background $color-f3
+        &.forbidden
+          pointer-events none
+          color #FFD166
+        .footer-right-icon
+          flex-f()
+          .commission-icon,
+          .flash-icon
+            width 30px
+            height 32px
+            bg('commission.png')
+          .flash-icon
+            bg('clock-bottom.png')
+        .footer-right-seperate
+          height 30px
+          margin 0 10px
+          bd-r(#fdcb55)
+          border-right-style dotted
+        .footer-right-message-text
+          f12()
+          h2
+            line-height 40px
+            span
+              fz(20px)
+          p
+            line-height 28px
+          .count-down-bottom
+            f12()
+            flex-align-item()
+            color $color-0
+            span
+              width 40px
+              height 32px
+              tc()
+              line-height 36px
+              color $color-white
+              background #000
+              border-radius(8px)
+      .footer-right-quotation
+        flex 1
+        padding 10px 0
+        f12()
+        background-image linear-gradient(90deg, #ff6210, #ff8a00)
+        flex-col()
+        align-items center
+        &.forbidden
+          pointer-events none
+          color #FFB467
+        &.share
+          flex-direction row
+          justify-content center
+          .footer-quotation-icon
+            margin-right 10px
+          h2
+            f16()
+        .footer-quotation-icon
+          width 40px
+          height 40px
+          bg('goods-cart.png')
+          // margin-bottom 10px
+        h2
+          line-height 40px
+    .nav-menu-wrapper
+      position absolute
+      // top -190px
+      top -185px
+      left 40px
+      z-index 10
+  .add-goods-wrapper
+    width 100%
+    height 68%
+    background $color-white
+    position absolute
+    left 0
+    right 0
+    bottom 0
+    flex-col-btw()
+    .goods-description-price
+      flex 1
+      flex-col()
+      .goods-price-description
+        padding 40px 0
+        padding-top 32px
+        flex-f()
+        .goods-pic
+          position relative
+          wh(200px)
+          border-radius(8px)
+          background $color-white
+          padding 1px;/*no*/
+          margin-top -62px
+          &.hot-goods
+            bg('bg-hot.png')
+          &.flash-goods
+            bg('bg-flash.png')
+          img
+            display block
+            wh(100%)
+          .hot-goods-label,
+          .falsh-goods-label
+            position absolute
+            left 0
+            top 0
+            width 102px
+            height 36px
+          .hot-goods-label
+            bg('label-hot.png')
+          .falsh-goods-label
+            bg('label-falsh.png')
+        .goods-main-info
+          padding 0 36px
+          padding-right 16px
+          flex 1
+          .goods-name
+            f14()
+            color $color-3
+            font-weight 700
+            line-height 1.4
+            margin-bottom 24px
+            text-over(2)
+          p
+            font-weight 700
+            f14()
+            color $color-red
+            span
+              f18()
+            .price-limit
+              color $color-9
+              f11()
+              margin-left 4px 
+        .icon-close
+          box-sizing content-box
+          wh(24px)
+          bg('close.png')
+          padding 10px
+          margin-right -10px
+          background-origin content-box
+          background-clip content-box
+      .goods-lists
+        flex 1
+        overflow hidden
+        overflow-y auto
+        .multipart-goods
+          flex-col()
+          height 100%
+        .goods-item-tabs
+          margin 0 -30px
+          height 68px
+          bd-b($color-f4)
+        .goods-item-swiper
+          flex 1
+          .vux-swiper
+            height 100%!important
+            .vux-swiper-item
+              overflow-y auto!important
+        .goods-item
+          height 120px
+          flex-align-item()
+          .goods-item-left
+            color $color-3
+            f14()
+            .goods-item-name
+              line-height 40px
+            .goods-item-price
+              line-height 32px
+              f12()
+              color $color-9
+              span
+                color $color-3
+              b
+                color $color-orange
+            .delete
+              text-decoration line-through
+          .goods-item-right
+            f12()
+            flex-align-item()
+            color $color-9
+          .goods-add-item
+            margin-left 8px
+    .goods-total-price
+      .goods-price
+        f13()
+        height 72px
+        background #fff6ec
+        flex-align-item()
+        .total-price
+          color $color-3
+          span
+            color $color-red
+        .total-commission
+          flex-align-item()
+          color $color-orange
+          .commission-icon-money
+            width 32px
+            height 30px
+            bg('commission-bottom.png')
+            margin-right 4px;/*no*/
+          .commission-flash-icon
+            wh(32px)
+            bg('goods-save.png')
+      .button-saved-money,
+      .button-make-money
+        flex-f()
+        height 100px
+        button
+          flex 1
+          width 50%
+          padding 0
+          f16()
+          flex-center()
+          color $color-white
+          &.button-add-cart
+            background #FFB300
+          &.button-buy
+            background-image linear-gradient(to right, #FF4910 0%, #FF8A00 100%)
+        i
+          wh(56px)
+          margin-right 24px
+          &.icon-add-cart
+            bg('icon-cart-white.png')
+          &.icon-buy
+            bg('icon-save-money.png')
+          &.icon-make-money
+            bg('icon-make-money.png')
+          &.icon-quotation
+            bg('icon-add-quotation.png')
+      .button-wrapper
+        position relative
+      .add-quotation-wrapper
+        position absolute
+        left 0
+        top 0
+        .quotation-wrapper
+          position absolute
+          bd(#FFB300)
+          background $color-white
+          width 270px
+          left 24px
+          bottom 6px;/*no*/
+          border-radius(12px)
+          overflow unset
+          &:after
+            content ''
+            position absolute
+            wh(0)
+            left 20px;/*no*/
+            bottom -12px;/*no*/
+            border-top 6px solid #FFB300;/*no*/
+            border-bottom 6px solid transparent;/*no*/
+            border-left 4px solid transparent;/*no*/
+            border-right 4px solid transparent;/*no*/
+          &:before
+            content ''
+            position absolute
+            z-index 1
+            wh(0)
+            left 21px;/*no*/
+            bottom -10px;/*no*/
+            border-top 5px solid $color-white;/*no*/
+            border-bottom 5px solid transparent;/*no*/
+            border-left 3px solid transparent;/*no*/
+            border-right 2px solid transparent;/*no*/
+          .quotation-guide
+            background #FFB300
+            height 80px
+            padding 0 26px
+            flex-align-item()
+            color $color-white
+            f14()
+            p
+              flex-f-align()
+            .double-arrow
+              width 18px
+              height 20px
+              bg('icon-arrow-double.png')
+              margin-left 4px
+            .icon-close
+              box-sizing content-box
+              width 20px
+              height 22px
+              padding 10px
+              bg('icon-quotation-close.png')
+              margin-right -10px
+              background-origin content-box
+              background-clip content-box
+        .quotation
+          .quotation-list
+            padding 0 26px
+            max-height 350px
+            overflow hidden
+            overflow-y auto
+            &::-webkit-scrollbar
+              width 2px;/*no*/
+            .quotation-item
+              padding 20px 0
+              f12()
+              color $color-9
+              border-bottom 1px dashed #EFEFEF;/*no*/
+          .create-quotation
+            width 240px
+            height 60px
+            margin 12px auto
+            background-image linear-gradient(to right, #FDCF62 15%, #FFB300 66%)
+            border-radius(12px)
+            flex-center()
+            f14()
+            color $color-white
+            background-origin content-box
+            i
+              wh(24px)
+              bg('icon-quotation-add.png')
+              margin-right 8px
+        .quotation-mask
+          position fixed
+          width 1000%
+          height 1000%
+          left 0
+          top 0
+          right 0
+          bottom 0
+  /* 分享页面弹窗 */
+  .fade-enter-active,
+  .fade-leave-active
+    transition opacity .6s
+  .fade-enter,
+  .fade-leave-to
+    opacity 0
+  .share-popup-container
+    pf(100%)
+    z-index 1000
+    left 0
+    top 0
+    background rgba(0, 0, 0, .4)
+    .share-popup-wrapper
+      width 600px
+      height 698px
+      padding 0 50px
+      position absolute
+      left 50%
+      top 50%
+      transform translate(-50%, -50%)
+      border-radius(20px)
+      bg('share-bg.png')
+      .share-close
+        wh(22px)
+        padding 11px
+        position absolute
+        right 28px
+        top 16px
+        box-sizing content-box
+        bg('close-share-popup.png')
+        background-origin content-box
+      h2
+        color $color-6
+        f14()
+        line-height 40px
+        tc()
+        margin-top 22px
+        margin-bottom 30px
+      h1
+        line-height 40px
+        margin-bottom 30px
+        tc()
+        .commission-text
+          f14()
+          color $color-orange
+        .commission-price
+          fz(22px)
+          color $color-red
+      .commission-introduce
+        f12()
+        color #2A2A2A
+        line-height 40px
+        padding 0 30px
+        margin-bottom 84px
+        span
+          fz(13px)
+          color $color-0
+      .share-seperate
+        bd-b($color-f4)
+        margin 30px 0
+      .buyer-price-text
+        f12()
+        color $color-3
+        line-height 34px
+        margin-bottom 2px;/*no*/
+        tc()
+      .buyer-price
+        f14()
+        color $color-red
+        line-height 40px
+        tc()
+  /* 过期页面 */
+  .out-time-container
+    height 100%
+    color $color-9
+    position relative
+    f14()
+    line-height 40px
+    tc()
+    background $color-f4
+    img
+      width 260px
+      height 296px
+      margin-top 240px
+      margin-bottom 40px
+    .out-time-back
+      position absolute
+      left 0
+      right 0
+      top 0
+      height 108px
+      flex-align-item()
+      padding-top 20px
+      padding-left 24px
+      background $color-white
+      span
+        width 24px
+        height 40px
+        bg('返回箭头@2x.png')
+      i
+        font-style normal
+        position absolute
+        left 50%
+        top 60%
+        color $color-0
+        transform translate(-50%, -50%)
+  /* 已下架展示栏 */
+  .invoked-goods-wrapper
+    pf(92px)
+    background $color-c2
+    line-height 92px
+    f14()
+    color $color-white
+    tc()
+    left 0
+    right 0
+    bottom 100px
+    &.active
+      background $color-red
+      height 82px
+      line-height 82px
+      f12()
+  .padding-30
+    padding 0 30px
+  .bd-b
+    bd-b($color-f4)
+  /* 分割线 */
+  .separate
+    height 12px
+    background $color-f4
+  /* 采购师和svip icon */
+  .goods-price-icon-1,
+  .goods-price-vip-1
+    color #3262d1
+    bd(#3262d1)
+    padding 4px 14px
+    border-radius(100px)
+  .goods-price-vip-1
+    color #d0021b
+    bd(#d0021b)
+    span
+      display inline-block
+      vertical-align middle
+      width 30px
+      height 26px
+      bg('svip-icon.png')
+  /* menu 菜单公共样式 */
+  .nav-menu-tab
+    // width 240px
+    background rgba(0, 0, 0, .8)
+    border-radius(16px)
+    overflow visible
+    padding 0 30px
+    position relative
+    &.arrow-top
+      &:before
+        content ''
+        position absolute
+        top -12px;/*no*/
+        right 12px;/*no*/
+        width 0
+        height 0
+        bd(transparent, 6px)
+        bd-b(rgba(0, 0, 0, .8), 6px)
+    &.arrow-bottom
+      &:after
+        content ''
+        position absolute
+        bottom -12px;/*no*/
+        left 12px;/*no*/
+        width 0
+        height 0
+        bd(transparent, 6px)
+        bd-t(rgba(0, 0, 0, .8), 6px)
+    .menu-tab-item
+      padding 20px 0
+      bd-b(rgba(255, 255, 255, .15))
+      span
+        display inline-block
+        vertical-align middle
+        &:nth-child(1)
+          width 40px
+          height 40px
+          margin-right 20px
+      .menu-home
+        bg('gray-home.png')
+        &.active
+          bg('hover-home.png')
+      .menu-message
+        bg('gray-message.png')
+        &.active
+          bg('hover-message.png')
+      .menu-query
+        bg('gray-query.png')
+        &.active
+          bg('hover-query.png')
+      .menu-tel
+        bg('gray-tel.png')
+        &.active
+          bg('hover-tel.png')
+      .menu-share
+        bg('gray-share.png')
+        &.active
+          bg('hover-share.png')
+      .tab-item-text
+        f14()
+        color $color-white
+        &.active
+          color $color-orange
+  /* 价格与佣金介绍弹窗 */
+  .explain-price-popup-container
+    position fixed
+    left 0
+    top 0
+    right 0
+    bottom 0
+    background rgba(0, 0, 0, .4)
+    background-origin content-box
+    background-clip content-box
+    z-index 1000
+    .explain-price-popup-wrapper
+      width 600px
+      height 816px
+      position absolute
+      left 50%
+      top 50%
+      transform  translate(-50%, -50%)
+      background $color-white
+      border-radius(20px)
+      padding 12px
+      overflow visible
+      flex-col()
+      .popup-header
+        flex-f()
+        margin 70px auto 0
+        justify-content center
+        position relative
+        .clound-left,
+        .clound-right
+          width 60px
+          height 24px
+        .clound-left
+          bg('clound-left.png')
+        .clound-right
+          bg('clound-right.png')
+        .header-bg
+          width 200px
+          height 24px
+          margin 0 10px
+          background #F8E71C
+        .header-text
+          fz(15px)
+          line-height 40px
+          color $color-3
+          position absolute
+          top -16px
+      .popup-body
+        height 660px
+        /* swiper */
+        .vux-slider
+          height 100%
+          .vux-swiper
+            height 100%!important
+        .body-title
+          width 536px
+          height 96px
+          background #FFF7D5
+          border-radius(100px)
+          padding 0 28px 0 46px
+          flex-f()
+          align-items center
+          color #FF8A00
+          fz(13px)
+          line-height 36px
+          margin 50px auto 25px
+        .body-item
+          padding 0 24px
+          margin-bottom 10px
+          h2
+            color $color-orange
+            fz(13px)
+            line-height 40px
+          p
+            color #2A2A2A
+            f12()
+            line-height 40px
+        .commission-item-body
+          padding 120px 52px 0 30px
+          .commission-item
+            flex-f()
+            margin-bottom 40px
+            .commission-item-icon
+              width 24px
+              height 26px
+              bg('commission-item-icon.png')
+              margin-right 24px
+              margin-top 3px;/*no*/
+            p
+              flex 1
+              color $color-6
+              f12()
+              line-height 40px
+      .popup-footer
+        width 168px
+        height 12px
+        margin 0 auto
+        bd(#4A90E2)
+        border-radius(20px)
+        flex-f()
+        span
+          flex 1
+          &.active
+            background #4A90E2
+      .popup-left-arrow,
+      .popup-right-arrow
+        z-index 10
+        position absolute
+        width 28px
+        height 80px
+        top 50%
+        transform translateY(-50%)
+      .popup-left-arrow
+        bg('explain-left-arrow.png')
+        left -48px
+      .popup-right-arrow
+        bg('explain-right-arrow.png')
+        right -48px
+      .popup-close-icon
+        position absolute
+        left 50%
+        transform translateX(-50%)
+        wh(56px)
+        bg('explain-close.png')
+        bottom -80px
+  .make-money-explain
+    position fixed
+    width 100%
+    height 100%
+    background rgba(0, 0, 0, .5)
+    img
+      display block
+      wh(704px)
+      margin 0 auto
+      margin-top 190px
+      &.ipone-x
+        margin-top 278px

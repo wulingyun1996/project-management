@@ -1,0 +1,1 @@
+webpackJsonp([214],{Zq5C:function(o,p,g){o.exports=g.p+"static/img/big-logo.3372f78.png"}});
