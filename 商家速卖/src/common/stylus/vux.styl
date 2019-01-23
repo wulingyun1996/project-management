@@ -1,0 +1,177 @@
+@import "./variable.styl"
+@import "./mixin.styl"
+#app
+  // 单选
+  .vux-check-icon > .weui-icon-success:before, .vux-check-icon > .weui-icon-success-circle:before
+    color $color-orange!important;
+  .vux-check-icon > span
+    font-size 24px!important;/*px*/
+    color $color-9!important;
+  .weui-icon-circle, .weui-icon-success
+    font-size 40px;/*px*/
+  // 表单 单选
+  .weui-cell
+    // height: 88px;/*px*/ // 这里要改
+    font-size 24px;/*px*/
+    &.vux-x-textarea
+      height auto
+      &:before
+        border none
+        height: 0
+  .weui-cells_checkbox .weui-icon-checked:before
+    font-size 40px;/*px*/
+  .weui-cells_checkbox .weui-check:checked + .vux-checklist-icon-checked:before
+    color $color-orange!important;
+  //toast
+  .weui-cells__title
+    font-size 24px;/*px*/
+    color $color-orange
+    padding 30px 0
+    margin: 0
+  //select
+  .weui-cell_select .weui-select
+    font-size 26px;/*px*/
+    padding-left: 25px
+  .weui-cell_select .weui-cell__bd:after
+    height: 16px
+    width: 16px
+    margin-top: -8px
+    border-color #696175
+// confirm
+.vux-confirm
+  .vux-x-dialog
+    .weui-dialog
+      border-radius: 28px
+      background-color: $color-f7
+      max-width: 70%
+      .weui-dialog__hd
+        padding: 45px 0 40px 0
+        .weui-dialog__title
+          font-size: 34px;/*px*/
+          color: $color-0
+          font-weight: 700
+      .vux-prompt
+        padding: 0 32px 94px 32px
+        input
+          height: 56px;/*px*/
+          border: 1px solid $color-gray;/*no*/
+          width: 90%
+          background: $color-white
+          font-size: 26px;/*px*/
+          color: $color-a6
+      .weui-dialog__ft
+        border-top: 1px solid $color-gray;/*no*/
+        .weui-dialog__btn
+          border-left: 1px solid $color-gray;/*no*/
+        .weui-dialog__btn_default,.weui-dialog__btn_primary
+          color: $color-blue
+          font-size: 34px;/*px*/
+          height: 88px;/*px*/
+          line-height: 88px;/*px*/
+.weui-toast
+  top: 50%
+  .weui-toast__content
+    font-size: 32px/*px*/;
+    padding: 20px!important
+popPicker()
+  .v-transfer-dom
+    .vux-popup-header
+      background: $color-white
+      height: 90px!important
+      .vux-popup-header-left,.vux-popup-header-right
+        font-size: 30px;/*px*/
+        text-align: center
+        line-height: 90px
+      .vux-popup-header-right
+        color: $color-orange9
+        padding-right: 26px
+      .vux-popup-header-left
+        padding-left: 26px
+        color: $color-0
+    .scroller-indicator
+      height: 88px;/*px*/
+      top: 50.5%
+      transform: translateY(-50%)
+      z-index: 999;
+      border-top: 1px solid #dfdfdf;/*no*/
+      border-bottom: 1px solid #dfdfdf;/*no*/
+      background: none
+    .scroller-component
+      height: 450px;/*px*/
+      background: rgba(248,248,248,0.9);
+      .scroller-mask
+        background-image: linear-gradient(to bottom, rgba(248,248,248,0.95), rgba(248,248,248,0.6)), linear-gradient(to top, rgba(248,248,248,0.95), rgba(248,248,248,0.6));
+    .scroller-item
+      font-size: 30px;/*px*/
+      height: 90px;/*px*/
+      line-height: 90px;/*px*/
+      color: $color-highlight-background
+    .scroller-item-selected
+      color: $color-0
+.vux-tab-wrap
+    .vux-tab-container
+      position absolute!important;
+
+/* Datetime */
+.dp-container
+  .dp-header
+    bd-b($color-f4)
+    height 90px
+    .dp-item
+     font-size: 30px;/*px*/
+    .dp-item.dp-left
+      color $color-0
+      padding-left 40px
+    .dp-item.dp-right
+      color $color-orange
+      padding-right 40px
+  .dp-content
+    .scroller-component
+      height 450px;/*px*/
+      background $color-white
+    .scroller-content
+      z-index 999
+    .scroller-indicator
+      height 90px;/*px*/
+      top 50%
+      transform translateY(-50%)
+      bd-t($color-df)
+      bd-b($color-df)
+    .scroller-item
+      fz(15px)
+      height 90px;/*px*/
+      line-height 90px;/*px*/
+    .scroller-item-selected
+      color $color-0
+      
+// x-address
+.v-transfer-dom
+  .vux-popup-header
+    background: $color-white
+    height: 90px!important
+    .vux-popup-header-left,.vux-popup-header-right
+      font-size: 30px;/*px*/
+      text-align: center
+      line-height: 90px
+    .vux-popup-header-right
+      color: $color-orange9 
+      padding-right: 26px
+    .vux-popup-header-left
+      padding-left: 26px
+      color: $color-0
+  .scroller-indicator
+    height: 90px;/*px*/
+    top: 50%
+    transform: translateY(-50%)
+    border-top: 1px solid $color-df;/*no*/
+    border-bottom: 1px solid $color-df;/*no*/
+  .scroller-component
+    height: 450px;/*px*/
+    background: $color-white
+  .scroller-item
+    font-size: 30px;/*px*/
+    height: 90px;/*px*/
+    line-height: 90px;/*px*/
+    color: $color-highlight-background
+  .scroller-item-selected
+    color: $color-0

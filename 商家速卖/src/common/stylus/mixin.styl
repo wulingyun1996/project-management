@@ -1,0 +1,596 @@
+@import './variable.styl'
+border-1px($color = #ccc, $radius = 2px, $style = solid)
+  position: relative
+  &:after
+    content: ""
+    pointer-events: none // 解决iphone上的点击无效Bug
+    display: block
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    border: 1px $style $color
+    border-radius: $radius
+    box-sizing border-box
+    width 100%
+    height 100%
+    @media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+      width: 200%
+      height: 200%
+      border-radius: $radius * 2
+      transform: scale(.5) translateZ(0)
+    @media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+      width: 300%
+      height: 300%
+      border-radius: $radius * 3
+      transform: scale(.33) translateZ(0)
+border-none()
+  &:before
+    display: none
+  &:after
+    display: none
+
+bg(url)
+  background url('./images/' + url) no-repeat center
+  background-size 100% 100%
+bd(color, width = 1px)
+  border width solid color;/*no*/
+bd-t(color, width = 1px)
+  border-top width solid color;/*no*/
+bd-b(color, width = 1px)
+  border-bottom width solid color;/*no*/
+bd-d(color, width = 1px)
+  border-bottom width dashed color;/*no*/
+bd-l(color, width = 1px)
+  border-left width solid color;/*no*/
+bd-r(color, width = 1px)
+  border-right width solid color;/*no*/
+// 1px border
+border-b(color = #e8e8e8)
+  position: relative
+  &:after
+    content: ''
+    width: 200%
+    height: 2px;/*px*/
+    background: color
+    position: absolute
+    left: 0
+    bottom: 0
+    transform-origin: 0 0
+    transform: scale(0.5)
+border-t(color = #e8e8e8)
+  position: relative
+  &:before
+    content: ''
+    width: 200%
+    height: 2px;/*px*/
+    background: color
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    transform: scale(0.5)
+f10()
+  font-size 20px;/*px*/
+f12()
+  font-size 24px;/*px*/
+f13()
+  font-size 26px;/*px*/
+f14()
+  font-size 28px;/*px*/
+f15()
+  font-size 30px;/*px*/
+f16()
+  font-size 32px;/*px*/
+f17()
+  font-size 34px;/*px*/
+f18()
+  font-size 36px;/*px*/
+fz(size)
+  font-size 2*size;/*px*/
+tc()
+  text-align center
+tr()
+  text-align right
+border-radius(num)
+  -webkit-border-radius num
+  -moz-border-radius num
+  border-radius num
+  overflow hidden
+flex-f()
+  display flex
+flex-s-btw()
+  flex-f()
+  justify-content space-between
+flex-align-item()
+  flex-s-btw()
+  align-items center
+flex-f-align()
+  flex-f()
+  align-items center
+flex-center()
+  flex-f()
+  align-items center
+  justify-content center
+flex-col()
+  display flex
+  flex-direction column
+flex-col-btw()
+  flex-col()
+  justify-content space-between
+pf(val)
+  width 100%
+  position fixed
+  height val
+wh(val)
+  width val
+  height val
+wb()
+  white-space normal
+  word-wrap break-word
+  word-break break-all
+
+flex-fix()
+  -ms-flex: 1 1 0.000000001px
+  -webkit-box-flex: 1
+  -webkit-flex: 1
+  flex: 1
+  -webkit-flex-basis: 0.000000001px
+  flex-basis: 0.000000001px
+  width: 1%
+
+touch-active(type = orange)
+  if (type == orange)
+    &:active
+      color: #fcc1a6
+      background-color: rgba(250, 143, 84, .04)
+  else
+    &:active
+      color: #c6c6c6
+      background-color: rgba(0, 0, 0, .04)
+
+hide-scrollbar()
+  &::-webkit-scrollbar
+    width: 0
+    height: 0
+
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  background-size: 100% auto
+  background-repeat: no-repeat
+  // @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+  //  background-image: url($url + "@3x.png")
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  {prop} args
+
+transition()
+  vendor('transition', arguments)
+
+transform()
+  vendor('transform', arguments)
+
+text-over(num)
+  overflow: hidden
+  text-overflow: ellipsis
+  display: -webkit-box
+  -webkit-line-clamp: num
+  -webkit-box-orient: vertical
+  word-break: break-all;
+
+arrow()
+  position: relative
+  &:after
+    content: ''
+    width: 20px;/*px*/
+    height: 20px;/*px*/
+    border-width :0 0 1px 1px;/*no*/
+    border-style :solid
+    border-color :#696175
+    position: absolute;
+    top: 50%;
+
+arrow-down()
+  arrow()
+  &:after
+    right: 25px;
+    transform: translateY(-50%) rotate(-45deg)
+
+arrow-left()
+  arrow()
+  &:after
+    left: 0
+    transform: translateY(-50%) rotate(45deg)
+
+arrow-right()
+  arrow()
+  &:after
+    right: 25px
+    border-bottom: 1px solid #696175;/*no*/
+    transform: translateY(-50%) rotate(-135deg)
+
+
+flex-box()
+  display: flex
+  justify-content: center
+
+flex-box-center()
+  display: flex
+  align-items: center
+
+flex-center()
+  flex-box-center()
+  justify-content: center
+
+flex-between()
+  display: flex
+  justify-content: space-between
+
+down-arrow()
+  &:after
+    content ''
+    width: 0
+    height: 10px
+    border-width: 16px
+    border-style: solid
+    border-color: rgba(105, 97, 117, .75) transparent transparent transparent
+    position: absolute
+    right: 20px
+    bottom: -41px
+
+click-arrow()
+  .arrow-left, .arrow-right
+    display: block
+    width: 80px
+    height: 80px
+    position: absolute
+    bottom: 122px
+    &:after
+      content: ''
+      width: 20px;/*px*/
+      height: 20px;/*px*/
+      border-left: 1px solid $color-gray;/*no*/
+      border-bottom: 1px solid $color-gray;/*no*/
+      position: absolute;
+      top: 50%;
+  .arrow-left
+    left: 30px
+    &:after
+      left: 0
+      transform: translateY(-50%) rotate(45deg)
+  .arrow-right
+    right: 0
+    &.no-pointer
+      // pointer-events: none
+      &:after
+        border-color: $color-c
+    &:after
+      right: 25px
+      transform: translateY(-50%) rotate(-135deg)
+// 1px border
+border-btm()
+  position: relative
+  &:after
+    content: ''
+    width: 200%
+    height: 2px;/*px*/
+    background: $color-df
+    position: absolute
+    left: 0
+    bottom: 0
+    transform-origin: 0 0
+    transform: scale(0.5)
+border-lp()
+  position: relative
+  &:before
+    content: ''
+    width: 2px
+    height: 200%;/*px*/
+    background: $color-df
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    transform: scale(0.5)
+border-tp()
+  position: relative
+  &:before
+    content: ''
+    width: 200%
+    height: 2px;/*px*/
+    background: $color-df
+    position: absolute
+    left: 0
+    top: 0
+    transform-origin: 0 0
+    transform: scale(0.5)
+noData()
+  .no-data, .content
+    position: absolute
+    width: 100%
+    top: 180px;/*px*/
+    bottom: 0
+  .no-data
+    img
+      width: 42.3%
+      height: auto
+      display: block
+      margin: 116px auto 0
+    p
+      text-align: center
+      font-size: 30px;/*px*/
+      color: $color-5
+      margin-top: 50px
+      line-height: 1.3
+    .go-see
+      font-size: 28px;/*px*/
+      color: $color-orange
+      text-align: center
+      border: 1px solid $color-orange
+      border-radius: 30px
+      display: block
+      width: 180px;/*px*/
+      line-height: 60px;/*px*/
+      margin: 90px auto 0
+.vux-tab
+  height: 92px;/*px*/
+  border-btm()
+  .vux-tab-item
+    font-size: 30px;/*px*/
+    line-height: 92px;/*px*/
+  .vux-tab-ink-bar
+    .vux-tab-bar-inner
+      border-radius: 20px
+.vux-swipeout-item
+  .vux-swipeout-button
+    font-size: 24px;/*px*/
+.discount
+  .weui-cells
+    input
+      border: 1px solid $color-border;/*no*/
+      height: 50px;/*px*/
+      width: 180px;/*px*/
+      margin-left: 20px
+      border-radius: 5px
+      padding-left: 10px
+
+.weui-cells
+  margin-top: 0!important
+  &:before, &:after
+    display: none
+  .weui-cell
+    padding: 0
+  .weui-textarea
+    width: 100%
+    height: 260px
+    border: 1px solid $color-border;/*no*/
+    border-radius: 6px
+    font-size: 24px;/*px*/
+    padding: 18px
+  .weui-textarea-counter
+    font-size: 24px;/*px*/
+    color: $color-c
+    position: absolute
+    right: 18px
+    bottom: 10px
+    span
+      color: $color-orange
+  .weui-label
+    font-size: 28px;/*px*/
+    line-height: 70px;/*px*/
+  .weui-input
+    display: block
+    width: 100%
+    height: 70px;/*px*/
+    border: 1px solid $color-c;/*no*/
+    padding: 0 25px
+    font-size: 28px;/*px*/
+  .weui-cell__ft
+    display: none
+.weui-cell
+  height auto!important
+clearfix()
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+.vux-x-dialog
+  .weui-dialog
+    width: 72%
+    max-width: 72%
+    border-radius: 40px
+    background: #f7f7f7
+    .weui-dialog__hd
+      padding: 42px 0
+    .weui-dialog__title
+      font-size: 34px;/*px*/
+      color: #000
+  .vux-prompt
+    padding-bottom: 36px
+  .vux-prompt-msgbox
+    width: 88%
+    border: 1px solid #808080;/*no*/
+    font-size: 26px;/*px*/
+    color: $color-3
+    padding: 12px
+    height: 112px;/*px*/
+    border-radius: 0
+  .weui-dialog__ft
+    line-height: 90px;/*px*/
+    &:after
+      border-width: 1px;/*no*/
+      border-top-color: #09141f
+    .weui-dialog__btn_default, .weui-dialog__btn_primary
+      color: #007aff
+      font-size: 34px;/*px*/
+  .weui-dialog__btn:after
+    border-width: 1px;/*no*/
+    border-left-color: #09141f
+.big-photo
+  .weui-dialog
+    width: 96%
+    max-width: 96%
+    img
+      display: block
+.vux-check-icon
+  .weui-icon-success
+    font-size: 36px;/*px*/
+    color: $color-orange
+    &:before
+      color: $color-orange!important
+  .weui-icon-circle
+    font-size: 36px;/*px*/
+    color: $color-9
+.loading
+  transition margin-top 380ms
+  &.show
+    margin-top 0
+  &.hide
+    margin-top: -90px
+    display: none
+.publice-goods
+  .publish-item
+    >div
+      width: 100%
+    .weui-textarea
+      border: none
+      height: 120px;/*px*/
+      padding: 0
+      font-size: 28px;/*px*/
+      font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
+    .weui-textarea-counter
+      bottom: 0
+  .weui-cells
+    width 100%
+    height: 100%
+    padding 0
+    border-right none
+    .weui-cell
+      height: 100%
+    .weui-input
+      height: 48px;/*px*/
+      border: none
+      text-align: right
+.picker-singer
+  .scroller-component
+    height: 270px;/*px*/
+    background: $color-white
+  .scroller-indicator
+    height: 90px;/*px*/
+    top: 50%
+    transform: translateY(-50%)
+    border-tp()
+    border-btm()
+  .scroller-content
+    .scroller-item
+      font-size: 30px;/*px*/
+      height: 90px;/*px*/
+      line-height: 90px;/*px*/
+      color: $color-bc
+      &.scroller-item-selected
+        color: $color-0
+.commodity-spec
+  .weui-cells
+    .weui-input
+      border-color: #808080
+      padding-left: 12px
+.weui-toast
+  .weui-toast__content
+    font-size: 30px;/*px*/
+    padding: 26px 30px!important
+    border-right: 10px;/*px*/
+.interval-quotation
+  .weui-cells
+    position: relative
+    overflow: inherit
+    .weui-input
+      height: 64px;/*px*/
+.scroller-mask
+  background: none!important
+.manager-management
+  .vux-swipeout-button-warn
+    background: $color-orange
+.manager-list
+  .vux-swipeout-item
+    height: 140px;/*px*/
+    border-btm()
+    >div
+      height: 100%
+    .vux-swipeout-content
+      >div
+        height: 100%
+.apply-list
+  .vux-swipeout-item
+    // height: 100%
+    // border-btm()
+.shop-manage
+  .vux-tab-wrap
+    height: 92px;/*px*/
+.vux-tab-wrap
+  padding-top 0
+  .vux-tab-container
+    height: 92px;/*px*/
+.special-content
+  .pull-list
+    .weui-cells
+      width auto
+      padding 30px 20px
+      border-right none
+.set-telephone
+  .text-input
+    .weui-cells
+      width 100%
+      height 100%
+      border-right none
+      .weui-input
+        border 1px solid #ccc;/*no*/
+.me-answer
+  .answer-text
+    .weui-cells
+      height 100%
+      width: 100%
+      border-right none
+.card-mana
+  .weui-cells
+    width 100%
+    height 100%
+    padding 0
+    border-right none
+#shopset
+  .weui-cells
+    width 100%
+    height 100%
+    padding 0
+    border-right none
+.addressbox
+  .weui-cells
+    width 100%
+    height 88px;/*px*/
+    line-height 88px;/*px*/
+    padding 0
+.time-begin,
+.time-end
+  .weui-cells
+    f14()
+    .vux-datetime.weui-cell
+      .weui-cell__ft
+        display block
+        text-align left
+        &:after
+          content unset
+      >div:nth-child(1)
+        p
+          color $color-c
+// swipeout
+.vux-swipeout
+  .vux-swipeout-item
+    .vux-swipeout-button-box
+      button.vux-swipeout-button
+        padding 2px 2px;/*no*/
+        background-origin content-box
+        background-clip content-box

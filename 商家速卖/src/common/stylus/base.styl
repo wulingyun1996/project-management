@@ -1,0 +1,221 @@
+@import "./mixin"
+body, html
+  width: 100%
+  height: 100%
+  line-height: 1
+  font-weight: 200
+  font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif
+  min-height: 100%
+
+* 
+  box-sizing: border-box
+
+input, button
+  background: none
+  border: 0
+.clearfix
+  display: inline-block
+  &:after
+    display: block
+    content: "."
+    height: 0
+    line-height: 0
+    clear: both
+    visibility: hidden
+body 
+  -webkit-text-size-adjust: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+input, textarea, select
+  border: none
+  font-family: inherit
+  font-size: inherit
+  font-weight: inherit
+  resize: none
+  outline: 0
+  box-shadow: none
+  -webkit-appearance: none
+#app
+  height: 100%
+.mar-t-10
+  margin-top 10px
+.m-34
+  margin-bottom 34px!important
+.vux-toast
+  .weui-toast.weui-toast_text
+    width auto!important
+
+#market-annnoucement,
+#preview-annnoucement
+  width 100%
+  height auto
+  > div
+    margin 0 auto
+    margin-bottom 16px
+  .cgs-market-description
+    f14()
+    color #000
+    line-height 40px
+  .cgs-market-picture
+    border-radius(8px)
+    img
+      wh(100%)
+  .cgs-market-goods-container
+    flex-f()
+    width 100%
+    flex-wrap wrap
+    margin-bottom 0
+    .goods-item
+      position relative
+      height 480px
+      width 49.2%
+      border-radius(8px)
+      margin-bottom 16px
+      flex-col()
+      &:nth-child(2n+1)
+        margin-right 10px
+      .hot-icon
+        width 140px
+        height 48px
+        position absolute
+        top 0
+        left 0
+        bg('icon-hot.png')
+      .flash-icon
+        width 140px
+        height 48px
+        position absolute
+        top 0
+        left 0
+        bg('icon-time.png')
+      .hot-line
+        // width 320px
+        width 100%
+        height 320px
+        position: absolute
+        top: 0
+        left 0
+        border-radius: 2px
+        bd(#f00, width: 2px)
+      .flash-line
+        // width 320px
+        width 100%
+        height 320px
+        position: absolute
+        top: 0
+        left 0
+        border-radius: 2px
+        bd(#00f)
+      img
+        display block
+        margin-top: 1px
+        width 100%
+        // max-height 340px
+        // width 
+        height 320px
+      .goods-detail
+        flex-col-btw()
+        background #fff
+        padding 8px 14px 16px
+        .goods-info-code
+          display: flex
+          align-items: center
+          .info-left
+            ont-family: PingFangSC-Regular
+            font-size: 20px
+            color: #F47575
+            letter-spacing: 0
+            background: rgba(244,117,117,0.10)
+            border-radius: 4px
+            padding 4px 5px
+          .info-center
+            font-family: PingFangSC-Regular
+            font-size: 20px
+            color: #FF8A00
+            letter-spacing: 0
+            background: rgba(255,138,0,0.10)
+            border-radius: 4px
+            padding 4px 5px
+          .info-right
+            ont-family: PingFangSC-Regular
+            font-size: 20px
+            color: #6DACF6
+            letter-spacing: 0
+            background: rgba(109,172,246,0.10)
+            border-radius: 4px
+            padding 4px 5px
+        .goods-title
+          f14()
+          color #000
+          text-over(1)
+          line-height 1.2
+          margin-bottom 10px
+          .goods-icon
+            display inline-block
+            width 76px
+            height 36px
+            bd(#FF8A00)
+            tc()
+            line-height 36px
+            color #FF8A00
+            margin-right 8px
+          .flash-icon,
+          .hot-icon
+            margin-left -8px
+            color #D0021B
+          .txt
+            line-height 40px
+        .goods-price
+          margin-top: 10px
+          flex-align-item()
+          .sale-price
+            color #f00
+            f12()
+            .price
+              f16()
+          .goods-commission
+            min-width 90px
+            min-height 30px
+            padding 0 8px
+            fz(9px)
+            border-radius(100px)
+            background #FF8A00
+            color #fff
+            flex-center()
+            i
+              width 20px
+              height 22px
+              bg('icon-commission.png')
+              margin-right 2px;/*no*/
+            span
+              margin-top 2px;/*no*/
+  .cgs-market-activity
+    width 100%
+    bd(#F4F4F4)
+    border-radius(8px)
+    img
+      display block
+      width 100%
+      height 320px
+    .activity-description
+      background #fff
+      padding 20px 25px 30px 20px
+      .activity-title
+        fz(15px)
+        text-over(1)
+        color #333
+        line-height 40px
+        margin-bottom 12px
+      .activity-detail
+        f14()
+        flex-align-item()
+        color #999
+        line-height 40px
+        p
+          flex-f-align()
+          i
+            width 28px
+            height 30px
+            bg('icon-clock.png')
+            margin-right 10px
+        .activity-flag
+          color #D70110

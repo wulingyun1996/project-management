@@ -1,0 +1,1 @@
+webpackJsonp([425],{1027:function(a,i,n){a.exports=n.p+"static/img/icon-add-details.056da15.png"}});

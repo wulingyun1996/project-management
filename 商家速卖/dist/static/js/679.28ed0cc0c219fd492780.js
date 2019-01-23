@@ -1,0 +1,1 @@
+webpackJsonp([679],{873:function(a,n,c){a.exports=c.p+"static/img/icon-alliance.aae1e94.png"}});
