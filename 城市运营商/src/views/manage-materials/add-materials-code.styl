@@ -1,0 +1,212 @@
+@import '~@/assets/css/variable'
+@import '~@/assets/css/mixins'
+.add-materials-container
+  .el-radio
+    margin-left: 0
+    margin-right: 20px
+    margin-top: 20px
+  .goods-fotter
+    margin-top: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+  .materials-name
+    margin-left: 50px
+    span:last-child
+      margin-left: 50px
+      color: #ff8a00
+      cursor pointer
+  .materials-nav-hiti
+    padding 20px 0
+  // ------------------------------- 类目模块 -------------------------------
+  // 搜索模块  
+  .search-wrapper
+    flex-center()
+    padding 20px 0
+    .input-container
+      width 200px
+      margin 0 20px
+  // 类目模块
+  .category-container
+    margin 20px 80px
+    min-height 400px
+    padding 20px
+    background-color #c0c0c0
+    .category-button
+      margin-bottom 20px
+    .category-wrapper
+      padding 10px
+      flex-f()
+      overflow hidden
+      overflow-x auto
+      .category-item
+        margin-right 40px
+        max-height 300px
+        max-width 250px
+        overflow hidden
+        overflow-y auto
+        &.search-list
+          max-width max-content
+      .search-item
+        flex-f-align()
+        cursor pointer
+        padding 20px 0
+        > div
+          margin-right 20px
+        p
+          f14()
+    .category-wrapper-search-no-data
+      p
+        tc()
+        ins
+          color #409EFF
+          cursor pointer
+  .category-names
+    padding-left 50px
+    p
+      f16()
+      span.active
+        color $color-orange
+        font-weight 700
+  .edit-goods-button
+    flex-center()
+    padding 20px
+    .edit-next-button
+      width 180px
+      height 36px
+      border-radius 4px
+      f14()
+      tc()
+      line-height 36px
+      color #fff
+      background-color #ccc
+      border-color #ccc
+      cursor pointer
+      pointer-events none
+      &.active
+        color #fff
+        background-color #409EFF
+        border-color #409EFF
+        pointer-events auto
+
+  .add-check-container
+    padding 20px 40px
+    .edit-goods-selected-category
+      flex-f-align()
+      color #333
+      f14()
+      .modify-category
+        color $color-orange
+        margin-left 20px
+        cursor pointer
+    hr
+      margin 20px 0
+    .place-code
+      display: flex
+      align-items: center
+      .el-input
+        width 260px
+    .fotter-button
+      display: flex
+      align-items: center
+      justify-content: center
+      .el-button
+        margin-right: 20px
+    .no-data
+      margin-top: 20px
+      margin-left: 10px
+    .check-color
+      .form-group
+        flex-f-align()
+        padding 10px 20px
+        &.flex-start
+          align-items flex-start
+        label
+          flex-f-align()
+          min-width 120px
+          height 30px
+          &.input-wrapper
+            width 100px
+            min-width auto
+            margin-right 20px
+          i.star
+            width 7px
+            color $color-orange
+            margin-left 2px
+          span
+            color #333
+            f14()
+        .group-container
+          position relative
+          .select-container
+            min-width 400px
+          .input-container
+            width 400px
+          .good-commission
+            color $color-orange
+            f14()
+          .title-tips
+            margin-left 15px
+            color #ccc
+            f14()
+          .icon-close
+            position absolute
+            wh(16px)
+            color $color-orange
+            right -8px
+            top -8px
+            cursor pointer
+          .el-icon-warning
+            f14()
+            color #ccc
+          .tips-wrapper
+            f14()
+            color #ccc
+            margin-left 10px
+            > p
+              line-height 20px
+          &.attr-item
+            flex-col()
+          &.flex-start
+            flex-f()
+            align-items flex-start
+          &.group
+            min-width 400px
+          &.flex1
+            flex 1
+          &.goods-title
+            flex-f-align()
+            .error-tips
+              position absolute
+              bottom -22px
+              left 0
+          &.radio
+            flex-f-align()
+          &.goods-banner-tips
+            f12()
+            color #ccc
+          &.goods-banner-wrapper
+            flex-f()
+            flex-wrap wrap
+            .banner-item
+              margin-right 20px
+              margin-bottom 20px
+          &.is-special
+            margin-left 20px
+
+
+
+
+  .el-menu-container
+    width 250px
+  #el-menu
+    .el-submenu
+      .el-menu-item
+        background-color #fff!important
+  .block
+    display block!important
+  p.error-tips
+    f12()
+    color #f00
+    padding 5px
+    min-width max-content
